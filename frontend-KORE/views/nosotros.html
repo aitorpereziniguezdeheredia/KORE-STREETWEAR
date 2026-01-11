@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - KÖRE Streetwear</title>
+    <link
+      rel="shortcut icon"
+      href="../assest/icon/KORE_logo_blanconegro_definitivo.webp"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/nosotros.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <!--EL CONTENIDO DE LA PÁGINA-->
+
+  <body>
+    <!------------CABECERA Y NAVEGACIÓN-------->
+    <header>
+      <!-- INPUT OCULTO QUE CONTROLA EL MENÚ -->
+      <input type="checkbox" id="menu-tienda" class="menu-tienda" />
+
+      <!-- ICONO DE MENÚ COMO LABEL -->
+      <label for="menu-tienda" class="material-symbols-outlined menu-icon"
+        >menu_open</label
+      >
+
+      <!-- MENÚ LATERAL -->
+      <nav id="sideNav">
+        <ul>
+          <li>
+            <a href="../index.html"
+              ><img
+                src="../assest/icon/KORE_logo_definitivo.webp"
+                alt="logo de la tienda"
+            /></a>
+          </li>
+          <li><a href="nosotros.html" class="enlace">Nosotros</a></li>
+          <li><a href="tienda.html" class="enlace">Tienda</a></li>
+          <li><a href="contacto.html" class="enlace">Contacto</a></li>
+          <li id="menuUsuarios"><a href="usuarios.html" class="enlace">Usuarios</a></li>
+          <li><a href="carrito.html" class="enlace">Carrito</a></li>
+          <li class="user-info">
+            <a href="perfil.html" class="enlace"
+              ><span id="nombreUsuario"></span
+            ></a>
+          </li>
+          <li class="boton_logout">
+            <button id="logout">
+              <img src="../assest/icon/apagar.webp" alt="logo de logout " />
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-content">
+        <h1>KÖRE Streetwear</h1>
+      </div>
+    </header>
+
+    <!------------CONTENIDO PRINCIPAL-------->
+    <main>
+      <h2>Sobre Nosotros</h2>
+
+      <section>
+        <article>
+          <h3>Quiénes Somos</h3>
+          <p>
+            Somos una tienda de ropa apasionada por la moda y el estilo. Desde
+            nuestros inicios, hemos trabajado para ofrecer prendas de calidad
+            que reflejen la personalidad de nuestros clientes.
+          </p>
+        </article>
+
+        <article>
+          <h3>Nuestra Misión</h3>
+          <p>
+            Brindar una experiencia de compra única, con productos que combinan
+            tendencia y comodidad, buscando siempre satisfacer las necesidades
+            de quienes confían en nosotros.
+          </p>
+        </article>
+
+        <article>
+          <h3>Valores</h3>
+          <ul>
+            <li>Calidad en cada prenda</li>
+            <li>Atención al cliente personalizada</li>
+            <li>Sostenibilidad y responsabilidad social</li>
+            <li>Pasión por la moda</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <!------------CONTENIDO ADICIONAL-------->
+
+    <!------------PIE DE PÁGINA-------->
+    <footer>
+      <p>2025 &copy; Aitor Perez</p>
+    </footer>
+  </body>
+  <script src="../js/auth.js"></script>
+  <script src="../js/me.js"></script>
+  <script src="../js/user-info.js"></script>
+  <script src="../js/logout.js"></script>
+</html>

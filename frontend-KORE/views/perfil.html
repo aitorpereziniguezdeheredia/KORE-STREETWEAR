@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil - KÖRE Streetwear</title>
+    <link
+      rel="shortcut icon"
+      href="../assest/icon/KORE_logo_blanconegro_definitivo.webp"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/perfil.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!------------CABECERA Y NAVEGACIÓN-------->
+    <header>
+      <!-- INPUT OCULTO QUE CONTROLA EL MENÚ -->
+      <input type="checkbox" id="menu-tienda" class="menu-tienda" />
+
+      <!-- ICONO DE MENÚ COMO LABEL -->
+      <label for="menu-tienda" class="material-symbols-outlined menu-icon"
+        >menu_open</label
+      >
+
+      <!-- MENÚ LATERAL (NO TOCADO) -->
+      <nav id="sideNav">
+        <ul>
+          <li>
+            <a href="../index.html">
+              <img
+                src="../assest/icon/KORE_logo_definitivo.webp"
+                alt="logo de la tienda"
+              />
+            </a>
+          </li>
+          <li><a href="nosotros.html" class="enlace">Nosotros</a></li>
+          <li><a href="tienda.html" class="enlace">Tienda</a></li>
+          <li><a href="contacto.html" class="enlace">Contacto</a></li>
+          <li id="menuUsuarios">
+            <a href="usuarios.html" class="enlace">Usuarios</a>
+          </li>
+          <li><a href="carrito.html" class="enlace">Carrito</a></li>
+          <li class="user-info">
+            <a href="perfil.html" class="enlace"
+              ><span id="nombreUsuario"></span
+            ></a>
+          </li>
+          <li class="boton_logout">
+            <button id="logout">
+              <img src="../assest/icon/apagar.webp" alt="logo de logout" />
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-content">
+        <h1>Perfil de Usuario</h1>
+      </div>
+    </header>
+
+    <!------------CONTENIDO PRINCIPAL-------->
+    <main>
+      <!-- INFORMACIÓN DEL USUARIO -->
+      <section>
+        <form>
+          <fieldset>
+            <legend>Información Personal</legend>
+
+            <label for="nombre">Nombre:</label><br />
+            <input type="text" id="nombre" readonly />
+            <br />
+            <br />
+            <label for="apellido">Apellido:</label><br />
+            <input
+              type="text"
+              id="apellido"
+              name="apellido"
+              readonly
+            /><br /><br />
+
+            <label for="email">Correo Electrónico:</label><br />
+            <input type="email" id="email" name="email" readonly /><br /><br />
+
+            <label for="rol">Rol:</label><br />
+            <input type="text" id="rol" name="rol" readonly /><br /><br />
+
+            <label for="telefono">Teléfono:</label><br />
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              readonly
+            /><br /><br />
+
+            <label for="fecha_registro">Fecha de registro:</label><br />
+            <input
+              type="text"
+              id="fecha_registro"
+              name="fecha_registro"
+              readonly
+            /><br /><br />
+          </fieldset>
+        </form>
+      </section>
+
+      <!-- HISTORIAL DE COMPRAS -->
+      <section>
+        <h2>Historial de Compras</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID Pedido</th>
+              <th>Fecha</th>
+              <th>Total</th>
+              <th>Estado</th>
+              <th>DETALLES</th>
+            </tr>
+          </thead>
+          <tbody id="historialCompras">
+            <!-- Ejemplo -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!------------PIE DE PÁGINA-------->
+    <footer>
+      <p>2025 &copy; Aitor Perez</p>
+    </footer>
+    <div id="modalDetalle" class="modal-overlay" style="display: none">
+      <div class="modal-content">
+        <button onclick="cerrarModalDetalle()">Cerrar</button>
+        <div id="contenidoDetalle"></div>
+      </div>
+    </div>
+  </body>
+  <script src="../js/auth.js"></script>
+  <script src="../js/me.js"></script>
+  <script src="../js/user-info.js"></script>
+  <script src="../js/logout.js"></script>
+  <script src="../js/perfil.js"></script>
+</html>

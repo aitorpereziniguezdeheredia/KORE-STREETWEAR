@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KÖRE Streetwear</title>
+    <link
+      rel="shortcut icon"
+      href="assest/icon/KORE_logo_blanconegro_definitivo.webp"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!------------CABECERA Y NAVEGACIÓN-------->
+    <header>
+      <!-- INPUT OCULTO QUE CONTROLA EL MENÚ -->
+      <input type="checkbox" id="menu-tienda" class="menu-tienda" />
+
+      <!-- ICONO DE MENÚ COMO LABEL -->
+      <label for="menu-tienda" class="material-symbols-outlined menu-icon"
+        >menu_open</label
+      >
+
+      <!-- MENÚ LATERAL -->
+      <nav id="sideNav">
+        <ul>
+          <li>
+            <a href="index.html"
+              ><img
+                src="assest/icon/KORE_logo_definitivo.webp"
+                alt="logo de la tienda"
+            /></a>
+          </li>
+          <li><a href="views/nosotros.html" class="enlace">Nosotros</a></li>
+          <li><a href="views/tienda.html" class="enlace">Tienda</a></li>
+          <li><a href="views/contacto.html" class="enlace">Contacto</a></li>
+          <li id="menuUsuarios"><a href="views/usuarios.html" class="enlace">Usuarios</a></li>
+          <li><a href="views/carrito.html" class="enlace">Carrito</a></li>
+          <li class="user-info">
+            <a href="views/perfil.html" class="enlace"
+              ><span id="nombreUsuario"></span
+            ></a>
+          </li>
+          <li class="boton_logout">
+            <button id="logout">
+              <img src="assest/icon/apagar.webp" alt="logo de logout " />
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header-content">
+        <h1>KÖRE Streetwear</h1>
+        <p class="slogan">"Nacidos para destacar."</p>
+      </div>
+    </header>
+
+    <!------------CONTENIDO PRINCIPAL-------->
+    <main></main>
+
+    <!------------PIE DE PÁGINA-------->
+    <footer>
+      <p>2025 &copy; Aitor Perez</p>
+    </footer>
+  </body>
+  <script src="js/auth.js"></script>
+  <script src="js/me.js"></script>
+  <script src="js/user-info.js"></script>
+  <script src="js/logout.js"></script>
+</html>

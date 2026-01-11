@@ -1,0 +1,362 @@
+/* --- Estilos base que ya tienes --- */
+html, body {
+  background: linear-gradient(to bottom, #111 25%, #e91e63 75%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #f4f4f4;
+  font-size: 1rem;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+  transition: margin-left 0.3s ease; /* Añade esta línea para una transición suave */
+}
+
+h1 {
+  transition: margin-left 0.3s ease; /* Añade esta línea para una transición suave */
+}
+
+body.menu-open main {
+    margin-left: 170px;
+}
+body.menu-open h1 {
+    margin-left: 170px;
+}
+
+footer {
+  flex-shrink: 0;
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #222;
+  color: #f4f4f4;
+}
+
+#busqueda {
+  padding: 10px 14px;
+  width: 320px;
+  font-size: 15px;
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+#busqueda:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0);
+  overflow: hidden;
+}
+
+thead {
+  background-color: #007bff00;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+
+th, td {
+  padding: 14px 18px;
+  text-align: left;
+  color: #ffffff;
+}
+
+tbody tr:not(:last-child) {
+  border-bottom: 1px solid #ffffff;
+}
+
+tbody tr:hover {
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+tr:hover td {
+  color: #000000;
+}
+
+tr:hover button {
+  background-color: #e91e63;
+}
+
+td[data-label="Acciones"] {
+  display: flex;
+  gap: 4px;
+}
+
+button {
+  padding: 6px 10px;
+  font-size: 13px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button.editar {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+button.eliminar {
+  background-color: #dc3545;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Paginación */
+#paginacion {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#paginacion button {
+  background-color: #000000;
+  color: white;
+  border: none;
+  margin: 0 5px;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+#paginacion button[disabled] {
+  background-color: #6c757d;
+  cursor: default;
+}
+
+#paginacion button:hover:not([disabled]) {
+  background-color: #0056b3;
+}
+
+/* --- Modal --- */
+#modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex; /* Flex para centrar contenido */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px; /* Padding para móvil */
+  overflow-y: auto;
+}
+
+#modal .modal-content {
+  background: #fff;
+  color: #333;
+  padding: 25px 30px;
+  border-radius: 12px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Formulario dentro del modal */
+#modalForm {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#modalForm .form-group label {
+  font-weight: 600;
+  color: #444;
+  display: block;
+  margin-bottom: 6px;
+}
+
+#modalForm input[type="text"],
+#modalForm input[type="email"],
+#modalForm select {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+#modalForm input[type="text"]:focus,
+#modalForm input[type="email"]:focus,
+#modalForm select:focus {
+  border-color: #e91e63;
+  outline: none;
+  box-shadow: 0 0 6px rgba(233, 30, 99, 0.5);
+}
+
+/* Botones modal */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modal-actions button[type="submit"] {
+  background-color: #e91e63;
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-actions button[type="submit"]:hover {
+  background-color: #c2185b;
+}
+
+.modal-actions button#modalClose {
+  background-color: #999;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-actions button#modalClose:hover {
+  background-color: #666;
+}
+
+/* Estilos para el div de detalles (modo ver) */
+#modalDetalles {
+  color: #222;
+  font-size: 1rem;
+  line-height: 1.5;
+  user-select: text;
+}
+
+#modalDetalles p {
+  margin-bottom: 10px;
+}
+
+#modalDetalles strong {
+  color: #e91e63;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+body.menu-open main {
+      margin-left: 0; /* En móviles, el main no se desplaza, el menú es un overlay */
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+  }
+
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+    color: #000000;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: 500;
+  }
+
+  tbody td:last-child {
+    border-bottom: none;
+    justify-content: flex-start;
+    gap: 4px;
+  }
+
+  /* Modal padding para pantallas pequeñas */
+  #modal {
+    padding: 10px;
+  }
+}
+
+/* Ancho personalizado por columna */
+th.col-id,
+td[data-label="ID"] {
+  width: 60px;
+  max-width: 60px;
+}
+
+th.col-nombre,
+td[data-label="Nombre"] {
+  width: 160px;
+  max-width: 160px;
+}
+
+th.col-email,
+td[data-label="Email"] {
+  width: 250px;
+  max-width: 250px;
+}
+
+th.col-rol,
+td[data-label="Rol"] {
+  width: 120px;
+  max-width: 120px;
+}
+
+th.col-estado,
+td[data-label="Estado"] {
+  width: 120px;
+  max-width: 120px;
+}
+
+th.col-acciones,
+td[data-label="Acciones"] {
+  width: 120px;
+  max-width: 120px;
+}
+
+
+.modal-actions button#modalClose {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-actions button#modalClose:hover {
+  background-color: #666;
+}

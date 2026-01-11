@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda - KÖRE Streetwear</title>
+    <link
+      rel="shortcut icon"
+      href="../assest/icon/KORE_logo_blanconegro_definitivo.webp"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/tienda.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <!--EL CONTENIDO DE LA PÁGINA-->
+
+  <body>
+    <!------------CABECERA Y NAVEGACIÓN--------->
+    <header>
+      <!-- INPUT OCULTO QUE CONTROLA EL MENÚ -->
+      <input type="checkbox" id="menu-tienda" class="menu-tienda" />
+
+      <!-- ICONO DE MENÚ COMO LABEL -->
+      <label for="menu-tienda" class="material-symbols-outlined menu-icon"
+        >menu_open</label
+      >
+
+      <!-- MENÚ LATERAL -->
+      <nav id="sideNav">
+        <ul>
+          <li>
+            <a href="../index.html"
+              ><img
+                src="../assest/icon/KORE_logo_definitivo.webp"
+                alt="logo de la tienda"
+            /></a>
+          </li>
+          <li><a href="nosotros.html" class="enlace">Nosotros</a></li>
+          <li><a href="tienda.html" class="enlace">Tienda</a></li>
+          <li><a href="contacto.html" class="enlace">Contacto</a></li>
+          <li id="menuUsuarios"><a href="usuarios.html" class="enlace">Usuarios</a></li>
+          <li><a href="carrito.html" class="enlace">Carrito</a></li>
+          <li class="user-info"><a href="perfil.html" class="enlace"><span id="nombreUsuario"></span></a></li>
+                <li class="boton_logout"><button id="logout"><img
+                src="../assest/icon/apagar.webp"
+                alt="logo de logout "
+            /></button></li>
+        </ul>
+      </nav>
+
+      <div class="header-content">
+        <h1>KÖRE Streetwear</h1>
+      </div>
+    </header>
+
+    <!------------CONTENIDO PRINCIPAL---------->
+    <main>
+      <h2>Nuestros productos</h2>
+      <!-- Producto 1 -->
+      <section class="galeria-products" id="listaProductos">
+        <!-- 
+            <article>
+                <img src="../assest/image/tienda/camisa_blanca.webp" alt="Producto 1 camisa blanca">
+                <h3>Camisa Blanca</h3>
+                <p>Precio: 25.00€</p>
+                <button>Comprar</button>
+            </article> -->
+        <!-- <article>
+                <img src="../assest/image/tienda/vestido_rojo.webp" alt="Producto 4 vestido rojo">
+                <h3>Vestido Rojo</h3>
+                <p>Precio: 50.00€</p>
+                <button>Comprar</button>
+            </article>-->
+      </section>
+    </main>
+
+    <!------------CONTENIDO ADICIONAL-------->
+    <aside id="adminPanel" class="oculto">
+      <button id="anadir-productos">Añadir</button>
+      <button id="modo-eliminar">Eliminar</button>
+    </aside>
+
+    <section class="contenedor-section oculto" id="formulario-productos">
+      <!-- 
+        Usamos dos clases aquí:
+            - "contenedor-section" aplica los estilos de diseño (display: flex, altura, etc.).
+            - "oculto" se encarga de ocultar el section (display: none) cuando sea necesario.
+        Así separamos la lógica de diseño (estructura) de la lógica de visibilidad (mostrar/ocultar).
+        -->
+      <!-- Título de la sección -->
+      <h1 id="titulo-seccion" class="titulo-seccion">
+        Añadir Nuevos Productos
+      </h1>
+
+      <!-- Lado izquierdo: formulario para añadir producto -->
+      <div
+        class="izquierda"
+        role="form"
+        aria-label="Formulario para añadir productos"
+      >
+        <form id="anadir-producto-form">
+          <input type="hidden" name="ID_categoria" value="1" />
+
+          <label for="archivo">Imagen del producto:</label>
+          <input
+            type="file"
+            id="imagen-producto"
+            name="imagen"
+            accept="image/*"
+            required
+          />
+
+          <label for="nombre">Nombre del producto:</label>
+          <input
+            type="text"
+            id="nombre-producto"
+            name="nombre"
+            placeholder="Nombre del producto..."
+            required
+          />
+
+          <label for="precio">Precio del producto:</label>
+          <!-- Contenedor con símbolo € y campo de precio -->
+          <div class="campo-precio">
+            <input
+              type="number"
+              id="precio"
+              name="precio"
+              placeholder="0"
+              required
+            />
+            <span class="simbolo-euro">€</span>
+          </div>
+
+          <button type="submit">Añadir a la tienda</button>
+          <button id="cerrar-formulario" type="button">
+            ❌ Cerrar formulario
+          </button>
+        </form>
+      </div>
+
+      <!-- Lado derecho: vista previa del producto -->
+      <div class="derecha" aria-live="polite">
+        <h3>Visualización en la tienda</h3>
+        <div class="tarjeta" tabindex="0">
+          <div class="imagen-contenedor">
+            <img id="vista-imagen" alt="Vista previa" />
+            <button id="borrar-imagen" class="boton-cruz" type="button">
+              ❌
+            </button>
+          </div>
+          <div class="nombre" id="vista-nombre">Nombre del producto</div>
+          <div class="precio" id="vista-precio">0€</div>
+        </div>
+      </div>
+    </section>
+    <!------------PIE DE PÁGINA-------->
+    <footer>
+      <p>2025 &copy; Aitor Perez</p>
+    </footer>
+  </body>
+  <script src="../js/auth.js"></script>
+  <script src="../js/me.js">
+  </script> <script src="../js/user-info.js">
+  </script> <script src="../js/logout.js"></script>
+  <script type="module" src="../js/tienda.js"></script>
+</html>
